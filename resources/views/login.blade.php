@@ -26,6 +26,8 @@
       }
       body {
       	font-feature-settings: "cv03", "cv04", "cv11";
+        background-image: url('{{ asset('assets/css/img/bg-img.jpg') }}');
+        background-size: cover;
       }
     </style>
   </head>
