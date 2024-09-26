@@ -26,9 +26,22 @@ class SesiController extends Controller
         ];
 
         if(Auth::attempt($infologin)) {
-            return redirect('administrator');
+            $request->session()->regenerate();
+            $user = Auth::user();
+            if ($user->role === 'admin') {
+                return redirect('/administrator');
+            } elseif ($user->role === 'siswa') {
+                return view('siswa.home');
+            }
         } else {
-            return redirect('')->withErrors('Username atau password salah')->withInput();
+            return redirect('/')->withErrors('Username atau password salah')->withInput();
         }
+    }
+
+    function logout(Request $request) {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
     }
 }
