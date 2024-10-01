@@ -93,6 +93,10 @@
           color:#1E2A5E;
         }
 
+        .input-black{
+          color:black;
+        }
+
     </style>
     
   </head>
@@ -117,7 +121,7 @@
               @csrf
               <div class="mb-3">
                 <label class="form-label">Username</label>
-                <input id="username" name="username" value="{{ old('username') }}" class="form-control"  autocomplete="off">
+                <input id="username" name="username" value="{{ old('username') }}" class="form-control input-black"  autocomplete="off">
               </div>
               <div class="mb-2">
                 <label class="form-label">Password</label>

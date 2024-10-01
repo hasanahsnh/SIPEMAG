@@ -39,8 +39,8 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background-color:#1E2A5E;
-                opacity: 30%;
+                background-color:red;
+                opacity: 40%;
                 z-index: 1;
                 pointer-events: none;
               }
@@ -55,43 +55,16 @@
           margin-left:20px;
           margin-right:20px;
           background-color:#EEEEEE;
-
-        }
-
-        .button {
-          float: right;
-          padding: 10px 30px;
-          background-color:#1E2A5E;
-          color:white;
-          border-radius:50px;
-          cursor:pointer;
-          border:none;
-          font-weight:700;
-        }
-
-        .form-control{
-            border-radius:50px;
-            background-color:#55679C;
-            opacity: 30%;
-        }
-
-        .input-group-text{
-            border-radius:50px;
-            background-color:#55679C;
         }
 
         h1{
-          font-size:40px;
+          color:red;
+          text-align:center;
+          padding:30px 10px 20px 0;
           font-weight:700;
-          padding:0 0 20px 0;
-          color:#1E2A5E;
         }
 
-        .form-label{
-          padding:0 0 0 15px;
-          font-weight:700;
-          color:#1E2A5E;
-        }
+       
 
     </style>
     
@@ -99,11 +72,14 @@
   <body  class=" d-flex flex-column">
     <script src="{{ asset('assets/js/demo-theme.min.js?1692870487') }}"></script>
     <!-- Code Here -->
-    <div class="container mt-5">
-      <div class="alert alert-danger">
-          <h4 class="alert-heading">Akses Ditolak</h4>
+    <div class="page page-center">
+      <div class="container ">
+        <div class="card card-md">
+            <h1>AKSES DITOLAK</h1>
+        </div>
       </div>
     </div>
+
     
     <!-- Libs JS -->
     <!-- Tabler Core -->

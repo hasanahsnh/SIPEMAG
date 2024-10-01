@@ -31,7 +31,7 @@ class SesiController extends Controller
             if ($user->role === 'admin') {
                 return redirect('/administrator');
             } elseif ($user->role === 'siswa') {
-                return view('siswa.home');
+                return view('pemagang.home');
             }
         } else {
             return redirect('/')->withErrors('Username atau password salah')->withInput();
