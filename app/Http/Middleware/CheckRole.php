@@ -22,7 +22,7 @@ class CheckRole
 
         $user = Auth::user();
         if ($user->role !== $role) {
-            return redirect('/unauthorized');
+            abort(404);
         }
 
         return $next($request);

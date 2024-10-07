@@ -39,8 +39,8 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background-color:red;
-                opacity: 40%;
+                background-color:white;
+                opacity: 90%;
                 z-index: 1;
                 pointer-events: none;
               }
@@ -58,10 +58,25 @@
         }
 
         h1{
-          color:red;
+          color:grey;
           text-align:center;
           padding:30px 10px 20px 0;
           font-weight:700;
+          font-size:200px;
+        }
+
+        h2{
+          color:grey;
+          text-align:center;
+          padding:70px 10px 20px 0;
+          font-weight:700;
+          font-size:70px;
+        }
+        h4{
+          color:grey;
+          text-align:center;
+          padding:30px 10px 20px 0;
+          font-size:15px;
         }
 
        
@@ -74,9 +89,9 @@
     <!-- Code Here -->
     <div class="page page-center">
       <div class="container ">
-        <div class="card card-md">
-            <h1>AKSES DITOLAK</h1>
-        </div>
+            <h1>404</h1>
+            <h2>Not Found</h2>
+            <h4>The resource requested could not be found on this server</h4>
       </div>
     </div>
 

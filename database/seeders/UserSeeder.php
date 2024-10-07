@@ -26,5 +26,12 @@ class UserSeeder extends Seeder
             'password' => bcrypt('s01Hasanah'),
             'role' => 'siswa'
         ]);
+
+        User::create([
+            'name' => 'Siswa',
+            'username' => 'siswa',
+            'password' => bcrypt('siswa'),
+            'role' => 'siswa'
+        ]);
     }
 }
