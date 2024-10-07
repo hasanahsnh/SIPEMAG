@@ -6,7 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UnauthorizedController;
 use App\Http\Middleware\CheckRole;
 
-Route::get('/', [SesiController::class, 'index']);
+Route::get('/', [SesiController::class, 'index'])->name('login');
 Route::post('/', [SesiController::class, 'login']);
 Route::get('/logout', [SesiController::class, 'logout']);
 //Route::get('/unauthorized', [UnauthorizedController::class, 'index']);
@@ -27,7 +27,7 @@ Route::fallback(function () {
 
 
 /*Route::middleware(['auth', CheckRole::class.':admin'])->group(function() {
-    // Hanya pemagang yangdapat mengakses halaman:
+    // Hanya siswa/pemagang yang dapat mengakses halaman:
 });
 
 Route::middleware(['auth', CheckRole::class.':admin'])->group(function() {

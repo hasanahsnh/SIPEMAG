@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class SesiController extends Controller
 {
@@ -29,7 +30,7 @@ class SesiController extends Controller
             $request->session()->regenerate();
             $user = Auth::user();
             if ($user->role === 'admin') {
-                return redirect('/administrator');
+                return redirect('home');
             } elseif ($user->role === 'siswa') {
                 return view('pemagang.home');
             }
