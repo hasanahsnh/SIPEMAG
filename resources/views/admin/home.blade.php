@@ -14,6 +14,26 @@
               {{ Auth::user()->name }}!
             </h2>
           </div>
+            
+          <div class="col-auto ms-auto d-print-none">
+                <div class="btn-list">
+
+                  <!-- Bootstrap Button Dropdown -->
+                  <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                      Tambah Data
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <li><a class="dropdown-item" href="#">Pembimbing Lapangan</a></li>
+                      <li><a class="dropdown-item" href="#">Dosen/Guru Pembimbing</a></li>
+                      <li><a class="dropdown-item" href="#">Pemagang</a></li>
+                    </ul>
+                  </div>
+
+                </div>
+              </div>
+
+          </div>
         </div>
       </div>
     </div>

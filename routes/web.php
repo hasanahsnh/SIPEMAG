@@ -9,22 +9,24 @@ use App\Http\Middleware\CheckRole;
 Route::get('/', [SesiController::class, 'index'])->name('login');
 Route::post('/', [SesiController::class, 'login']);
 Route::get('/logout', [SesiController::class, 'logout']);
-//Route::get('/unauthorized', [UnauthorizedController::class, 'index']);
-
-Route::middleware(['auth', CheckRole::class.':admin'])->group(function() {
-    // Hanya admin yang dapat mengakses halaman:
-    Route::get('/administrator', [AdminController::class, 'home']);
-    Route::get('/pembimbing-lapangan', [AdminController::class, 'pemlap']);
-    Route::get('/pembimbing-lembaga', [AdminController::class, 'pembaga']);
-    Route::get('/pemagang', [AdminController::class, 'magang']);
-    Route::get('/kehadiran', [AdminController::class, 'hadir']);
-
-});
 
 Route::fallback(function () {
     return response()->view('auth.unauthorized', [], 404);
 });
+//Route::get('/unauthorized', [UnauthorizedController::class, 'index']);
 
+Route::middleware(['auth', CheckRole::class.':admin'])->group(function() {
+    // Hanya admin yang dapat mengakses halaman:
+    Route::get('/home', [AdminController::class, 'index'])->name('home');
+    Route::get('/pembimbing-lapangan', [AdminController::class, 'pemlap'])->name('pemlap');
+    Route::get('/pembimbing-lembaga', [AdminController::class, 'pembaga'])->name('pembaga');
+    Route::get('/pemagang', [AdminController::class, 'magang'])->name('magang');
+    Route::get('/kehadiran', [AdminController::class, 'hadir'])->name('hadir');
+    Route::get('/rekap-kehadiran', [AdminController::class, 'rekaphadir']);
+    Route::get('/sertifikat', [AdminController::class, 'sertif']);
+
+
+});
 
 /*Route::middleware(['auth', CheckRole::class.':siswa'])->group(function() {
     // Hanya siswa/pemagang yang dapat mengakses halaman:

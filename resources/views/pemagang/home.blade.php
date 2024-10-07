@@ -1,5 +1,3 @@
-<h1>Selamat datang, {{ Auth::user()->name }}</h1>
-
 @extends('admin.layouts.header')
 @section('home-content')
   <div class="page-wrapper">

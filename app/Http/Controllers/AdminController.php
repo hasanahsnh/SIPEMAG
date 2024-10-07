@@ -10,7 +10,7 @@ class AdminController extends Controller
         return view('admin.layouts.header');
     }*/
 
-    function home() {
+    function index() {
         return view('admin.home');
     }
 
@@ -28,5 +28,13 @@ class AdminController extends Controller
 
     function hadir() {
         return view('admin.kehadiran');
+    }
+
+    function rekaphadir() {
+        return view('admin.rekap-kehadiran');
+    }
+
+    function sertif() {
+        return view('admin.sertifikat');
     }
 }
