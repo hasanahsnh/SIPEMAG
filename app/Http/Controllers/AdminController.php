@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    function index() {
+    /*function index() {
         return view('admin.layouts.header');
-    }
+    }*/
 
     function home() {
         return view('admin.home');

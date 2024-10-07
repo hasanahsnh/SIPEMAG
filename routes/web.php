@@ -13,7 +13,7 @@ Route::get('/logout', [SesiController::class, 'logout']);
 
 Route::middleware(['auth', CheckRole::class.':admin'])->group(function() {
     // Hanya admin yang dapat mengakses halaman:
-    Route::get('/administrator', [AdminController::class, 'index']);
+    Route::get('/administrator', [AdminController::class, 'home']);
     Route::get('/pembimbing-lapangan', [AdminController::class, 'pemlap']);
     Route::get('/pembimbing-lembaga', [AdminController::class, 'pembaga']);
     Route::get('/pemagang', [AdminController::class, 'magang']);
@@ -26,11 +26,11 @@ Route::fallback(function () {
 });
 
 
-/*Route::middleware(['auth', CheckRole::class.':admin'])->group(function() {
+/*Route::middleware(['auth', CheckRole::class.':siswa'])->group(function() {
     // Hanya siswa/pemagang yang dapat mengakses halaman:
 });
 
-Route::middleware(['auth', CheckRole::class.':admin'])->group(function() {
+Route::middleware(['auth', CheckRole::class.':guru'])->group(function() {
     // Hanya Dosen, guru pembimbing dan atau pembimbing lapangan yang dapat mengakses halaman:
 });*/
 
