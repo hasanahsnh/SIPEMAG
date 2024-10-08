@@ -37,4 +37,16 @@ class AdminController extends Controller
     function sertif() {
         return view('admin.sertifikat');
     }
+
+    function lokasi1() {
+        return view('admin.lokasi');
+    }
+
+    function tdpembimbing() {
+        return view('admin.td-pembimbing');
+    }
+
+    function tdpemagang() {
+        return view('admin.td-pemagang');
+    }
 }

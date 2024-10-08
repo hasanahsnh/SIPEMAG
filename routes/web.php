@@ -24,6 +24,9 @@ Route::middleware(['auth', CheckRole::class.':admin'])->group(function() {
     Route::get('/kehadiran', [AdminController::class, 'hadir'])->name('hadir');
     Route::get('/rekap-kehadiran', [AdminController::class, 'rekaphadir']);
     Route::get('/sertifikat', [AdminController::class, 'sertif']);
+    Route::get('/lokasi', [AdminController::class, 'lokasi1']);    
+    Route::get('/td-pembimbing', [AdminController::class, 'tdpembimbing']);
+    Route::get('/td-pemagang', [AdminController::class, 'tdpemagang']);
 
 
 });

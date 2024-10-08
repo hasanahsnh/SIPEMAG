@@ -13,12 +13,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Dashboard - Tabler - Premium and Open Source dashboard template with responsive and high quality UI.</title>
+
+	<!-- Tambahkan favicon -->
+	<link rel="shortcut icon" href="{{ asset('assets/login/sipemag-logo.png') }}">
+
     <!-- CSS files -->
     <link href="{{ asset('assets/css/tabler.min.css?1692870487') }}" rel="stylesheet"/>
     <link href="{{ asset('assets/css/tabler-flags.min.css?1692870487') }}" rel="stylesheet"/>
     <link href="{{ asset('assets/css/tabler-payments.min.css?1692870487') }}" rel="stylesheet"/>
     <link href="{{ asset('assets/css/tabler-vendors.min.css?1692870487') }}" rel="stylesheet"/>
     <link href="{{ asset('assets/css/demo.min.css?1692870487') }}" rel="stylesheet"/>
+
+	
+
+	<!--Leaflet JS -->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
     <style>
       @import url('https://rsms.me/inter/inter.css');
       :root {
@@ -27,6 +38,14 @@
       body {
       	font-feature-settings: "cv03", "cv04", "cv11";
       }
+
+	 
+	  #map { 
+		height: 400px;
+		margin:20px 0 0 0;
+		border-radius: 5px;
+	 }
+
     </style>
   </head>
   <body>
@@ -171,8 +190,8 @@
                       </div>
                     </div>
                   </div>
-				  <li class="nav-item ">
-                    <a class="nav-link" href="{{ url('') }}" >
+				  <li class="nav-item {{ Request::is('lokasi') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ url('lokasi') }}" >
                       	<span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/checkbox -->
 						  <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-map-pin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18.364 4.636a9 9 0 0 1 .203 12.519l-.203 .21l-4.243 4.242a3 3 0 0 1 -4.097 .135l-.144 -.135l-4.244 -4.243a9 9 0 0 1 12.728 -12.728zm-6.364 3.364a3 3 0 1 0 0 6a3 3 0 0 0 0 -6z" /></svg> </span>
 						<span class="nav-link-title">
@@ -180,8 +199,8 @@
                       </span>
                     </a>
                   </li>
-				  <li class="nav-item ">
-                    <a class="nav-link" href="{{ url('') }}" >
+				  <li class="nav-item {{ Request::is('konsultasi') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ url('konsultasi') }}" >
                       	<span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/checkbox -->
 					  		<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-messages"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" /><path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" /></svg></span> 
 					   	<span class="nav-link-title">
@@ -207,7 +226,7 @@
       <div class="container-fluid">
         @yield('home-content')
       </div>
-      
+
 	  <div class="container-fluid">
         @yield('footer')
       </div>
@@ -811,5 +830,52 @@
       });
       // @formatter:on
     </script>
+
+	<!--Leaflet JS-->
+	<script>
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+        } else {
+            alert("Geolocation tidak didukung oleh browser ini.");
+        }
+
+        function successCallback(position) {
+            var lat = position.coords.latitude;
+            var lng = position.coords.longitude;
+            
+            var map = L.map('map').setView([lat, lng], 17);
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(map);
+            
+            L.marker([lat, lng]).addTo(map)
+                .bindPopup('Lokasi Anda')
+                .openPopup();
+        }
+
+        function errorCallback(error) {
+            console.error("Error getting location: ", error);
+            alert("Gagal mendapatkan lokasi. Silakan coba lagi.");
+        }
+    </script>
+
+	<!-- Input Gambar JS -->
+	<script>
+		const imageInput = document.getElementById('image-input');
+		const imagePreview = document.getElementById('image-preview');
+
+		imageInput.addEventListener('change', function(event) {
+		const file = event.target.files[0];
+		if (file) {
+			const reader = new FileReader();
+			reader.onload = function(e) {
+			imagePreview.src = e.target.result;
+			};
+			reader.readAsDataURL(file);
+		}
+		});
+  	</script>
+
   </body>
 </html>

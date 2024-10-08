@@ -24,13 +24,12 @@
                       Tambah Data
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <li><a class="dropdown-item" href="#">Pembimbing Lapangan</a></li>
-                      <li><a class="dropdown-item" href="#">Dosen/Guru Pembimbing</a></li>
-                      <li><a class="dropdown-item" href="#">Pemagang</a></li>
+                      <li><a class="dropdown-item" href="{{ url('td-pembimbing') }}">Pembimbing</a></li>
+                      <li><a class="dropdown-item" href="{{ url('td-pemagang') }}">Pemagang</a></li>
                     </ul>
                   </div>
-
                 </div>
+                
               </div>
 
           </div>

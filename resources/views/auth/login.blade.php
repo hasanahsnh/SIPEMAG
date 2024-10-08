@@ -71,13 +71,7 @@
 
         .form-control{
             border-radius:50px;
-            background-color:#55679C;
-            opacity: 30%;
-        }
-
-        .input-group-text{
-            border-radius:50px;
-            background-color:#55679C;
+            background-color:#b0bee8;
         }
 
         h1{
@@ -91,10 +85,6 @@
           padding:0 0 0 15px;
           font-weight:700;
           color:#1E2A5E;
-        }
-
-        .input-black{
-          color:black;
         }
 
     </style>
@@ -121,7 +111,7 @@
               @csrf
               <div class="mb-3">
                 <label class="form-label">Username</label>
-                <input id="username" name="username" value="{{ old('username') }}" class="form-control input-black"  autocomplete="off">
+                <input id="username" name="username" value="{{ old('username') }}" class="form-control"  autocomplete="off">
               </div>
               <div class="mb-2">
                 <label class="form-label">Password</label>

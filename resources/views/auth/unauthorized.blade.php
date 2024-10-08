@@ -60,22 +60,21 @@
         h1{
           color:grey;
           text-align:center;
-          padding:30px 10px 20px 0;
+          padding:50px 0 0 10px;
           font-weight:700;
-          font-size:200px;
+          font-size:100px;
         }
 
         h2{
           color:grey;
           text-align:center;
-          padding:70px 10px 20px 0;
+          padding:30px 0 5px 0;
           font-weight:700;
-          font-size:70px;
+          font-size:30px;
         }
         h4{
           color:grey;
           text-align:center;
-          padding:30px 10px 20px 0;
           font-size:15px;
         }
 

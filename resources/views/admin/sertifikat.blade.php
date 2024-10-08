@@ -7,7 +7,7 @@
         <div class="row g-2 align-items-center">
           <div class="col">
             <h2 class="page-title">
-              Sertifikat
+              Sertifikat 
             </h2>
           </div>
         </div>
@@ -20,14 +20,32 @@
               <div class="col-12">
                 <div class="card">
                   <div class="card-body">
-                    <div class="d-flex">
-                        <input type="text" class="form-control" id="inputText" placeholder="NISN" required>
-                        <select class="form-select" id="dropdownMenu" aria-label="Default select example" required >
-                          <option selected disabled>Bulan</option>
-                          <option value="1">Januari</option>
-                        </select>                      
-                        <input type="text" class="form-control" id="inputText" placeholder="Tahun" required>
-                    </div>
+
+                    <div class="row row-cards">
+                        <div class="col-sm-6 col-md-4">
+                          <div class="mb-3">
+                            <label class="form-label">NISN</label>
+                            <input type="text" class="form-control" placeholder="Masukkan NISN">
+                          </div>
+                        </div>
+
+                        <div class="col-md-4">
+                          <div class="mb-3">
+                            <label class="form-label">Bulan</label>
+                            <select class="form-control form-select">
+                              <option value="" selected disabled>Pilih Bulan</option>
+                              <option value="1">Januari</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-4">
+                          <div class="mb-3">
+                            <label class="form-label">Tahun</label>
+                            <input type="test" class="form-control" placeholder="Masukkan Tahun">
+                          </div>
+                        </div>
+                      </div>
 
                     <div class="btn-list">
                       <a href="" class="btn1" >
