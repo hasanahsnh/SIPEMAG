@@ -7,7 +7,7 @@
         <div class="row g-2 align-items-center">
           <div class="col">
             <h2 class="page-title">
-              Tambah Data Pemagang
+              TAMBAH DATA PEMAGANG
             </h2>
           </div>
         </div>

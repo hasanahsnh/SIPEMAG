@@ -7,7 +7,7 @@
         <div class="row g-2 align-items-center">
           <div class="col">
             <h2 class="page-title">
-              Lokasi
+              LOKASI
             </h2>
           </div>
         </div>
@@ -20,10 +20,25 @@
               <div class="col-12">
                 <div class="card">
                   <div class="card-body">
-                    <div class="d-flex">
-                        <input type="text" class="form-control" id="inputText" placeholder="Latitude">                   
-                        <input type="text" class="form-control" id="inputText" placeholder="Longtitude">
-                        <input type="text" class="form-control" id="inputText" placeholder="Radius">
+                    <div class="row row-cards">
+                      <div class="col-sm-6 col-md-4">
+                        <div class="mb-3">
+                          <label class="form-label">Latitude</label>
+                          <input type="text" class="form-control" id="inputText" placeholder="Latitude">   
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-4">
+                        <div class="mb-3">
+                          <label class="form-label">Longitude</label>
+                          <input type="text" class="form-control" id="inputText" placeholder="Longitude">   
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-4">
+                        <div class="mb-3">
+                          <label class="form-label">Radius</label>
+                          <input type="text" class="form-control" id="inputText" placeholder="Radius">   
+                        </div>
+                      </div>
                     </div>
                     <div id="map"></div>
                   </div>

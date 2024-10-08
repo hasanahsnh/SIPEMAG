@@ -39,11 +39,10 @@
       	font-feature-settings: "cv03", "cv04", "cv11";
       }
 
-	 
 	  #map { 
 		height: 400px;
 		margin:20px 0 0 0;
-		border-radius: 5px;
+		border-radius: 3px;
 	 }
 
     </style>
@@ -105,7 +104,7 @@
 				<!-- Dropdown Navbar -->
 					<!-- Data -->
 					<li class="nav-item dropdown {{ Request::is('pembimbing-lapangan') || Request::is('pembimbing-lembaga') || Request::is('pemagang') ? 'active' : '' }}">
-						<a class="nav-link dropdown-toggle" href="" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">
+						<a class="nav-link dropdown-toggle" href="data" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">
 						<span class="nav-link-icon d-md-none d-lg-inline-block">
 							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-users">
 							<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -150,7 +149,7 @@
 							<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-databricks"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 17l9 5l9 -5v-3l-9 5l-9 -5v-3l9 5l9 -5v-3l-9 5l-9 -5l9 -5l5.418 3.01" /></svg>                      
 						</span>
 						<span class="nav-link-title">
-							Rekapitulasi Kehadiran
+							Rekap Kehadiran
 						</span>
 					</a>
 				</li>
@@ -164,32 +163,6 @@
 						</span>
 						</a>
 					</li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
-                    <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/package -->
-                      <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-database"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" /><path d="M4 6v6a8 3 0 0 0 16 0v-6" /><path d="M4 12v6a8 3 0 0 0 16 0v-6" /></svg>                    
-					</span>
-                    <span class="nav-link-title">
-                      Database Manager
-                    </span>
-                  </a>
-                  <div class="dropdown-menu">
-                    <div class="dropdown-menu-columns">
-                      <div class="dropdown-menu-column">
-                        <a class="dropdown-item" href="./alerts.html">
-                          <span class="nav-link-icon d-md-none d-lg-inline-block">
-                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-users-group"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 13a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M8 21v-1a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v1" /><path d="M15 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M17 10h2a2 2 0 0 1 2 2v1" /><path d="M5 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M3 13v-1a2 2 0 0 1 2 -2h2" /></svg>                          </span>
-                          Users
-                        </a>
-                        <a class="dropdown-item" href="./alerts.html">
-                          <span class="nav-link-icon d-md-none d-lg-inline-block">
-                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-file-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M9 15l2 2l4 -4" /></svg>                      </span>
-                          </span>
-                          Presents
-                        </a>
-                      </div>
-                    </div>
-                  </div>
 				  <li class="nav-item {{ Request::is('lokasi') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ url('lokasi') }}" >
                       	<span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/checkbox -->
@@ -208,6 +181,33 @@
                       </span>
                     </a>
                 </li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="tables" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
+					  <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/package -->
+						<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-database"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" /><path d="M4 6v6a8 3 0 0 0 16 0v-6" /><path d="M4 12v6a8 3 0 0 0 16 0v-6" /></svg>                    
+					  </span>
+					  <span class="nav-link-title">
+						Database Manager
+					  </span>
+					</a>
+					<div class="dropdown-menu">
+					  <div class="dropdown-menu-columns">
+						<div class="dropdown-menu-column">
+						  <a class="dropdown-item" href="./alerts.html">
+							<span class="nav-link-icon d-md-none d-lg-inline-block">
+							  <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-users-group"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 13a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M8 21v-1a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v1" /><path d="M15 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M17 10h2a2 2 0 0 1 2 2v1" /><path d="M5 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M3 13v-1a2 2 0 0 1 2 -2h2" /></svg>                          </span>
+							Users
+						  </a>
+						  <a class="dropdown-item" href="./alerts.html">
+							<span class="nav-link-icon d-md-none d-lg-inline-block">
+							  <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-file-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M9 15l2 2l4 -4" /></svg>                      </span>
+							</span>
+							Presents
+						  </a>
+						</div>
+					  </div>
+					</div>
+				  </li>
 				  <li class="nav-item">
 						<a class="nav-link" href="{{ url('logout') }}" >
 						<span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/checkbox -->
@@ -241,6 +241,45 @@
     <!-- Tabler Core -->
     <script src="{{ asset('assets/js/tabler.min.js?1692870487') }}" defer></script>
     <script src="{{ asset('assets/js/demo.min.js?1692870487') }}" defer></script>
+	<!-- Leaflet JS -->
+	<script>
+        if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(successCallback, errorCallback, {
+				enableHighAccuracy: true, 
+				timeout: 10000,           
+				maximumAge: 0             
+			});
+		} else {
+			alert("Geolocation tidak didukung oleh browser ini.");
+		}
+
+		function successCallback(position) {
+			var lat = position.coords.latitude;
+			var lng = position.coords.longitude;
+			var accuracy = position.coords.accuracy;
+
+			console.log(`Latitude: ${lat}, Longitude: ${lng}, Akurasi: ${accuracy} meters`);
+
+			if (accuracy < 100) {
+				var map = L.map('map').setView([lat, lng], 17);
+				L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+					maxZoom: 19,
+					attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+				}).addTo(map);
+
+				L.marker([lat, lng]).addTo(map)
+					.bindPopup('Lokasi Anda')
+					.openPopup();
+			} else {
+				alert("Lokasi akurat Anda tidak dapat ditentukan. Silakan coba lagi atau periksa koneksi Anda.");
+			}
+		}
+
+		function errorCallback(error) {
+			console.error("Error getting location: ", error);
+			alert("Gagal mendapatkan lokasi. Silakan coba lagi atau periksa koneksi Anda.");
+		}
+    </script>
     <script>
       // @formatter:off
       document.addEventListener("DOMContentLoaded", function () {
@@ -830,36 +869,6 @@
       });
       // @formatter:on
     </script>
-
-	<!--Leaflet JS-->
-	<script>
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-        } else {
-            alert("Geolocation tidak didukung oleh browser ini.");
-        }
-
-        function successCallback(position) {
-            var lat = position.coords.latitude;
-            var lng = position.coords.longitude;
-            
-            var map = L.map('map').setView([lat, lng], 17);
-            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-            }).addTo(map);
-            
-            L.marker([lat, lng]).addTo(map)
-                .bindPopup('Lokasi Anda')
-                .openPopup();
-        }
-
-        function errorCallback(error) {
-            console.error("Error getting location: ", error);
-            alert("Gagal mendapatkan lokasi. Silakan coba lagi.");
-        }
-    </script>
-
 	<!-- Input Gambar JS -->
 	<script>
 		const imageInput = document.getElementById('image-input');

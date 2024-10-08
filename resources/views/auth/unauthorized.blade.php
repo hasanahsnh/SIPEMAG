@@ -91,10 +91,16 @@
             <h1>404</h1>
             <h2>Not Found</h2>
             <h4>The resource requested could not be found on this server</h4>
+            <button id="backButton" onclick="goBack()">Kembali</button>
       </div>
     </div>
 
-    
+    <!-- Back Button -->
+    <script>
+        function goBack() {
+          window.history.back(); // Mengembalikan pengguna ke halaman sebelumnya
+      }
+    </script>
     <!-- Libs JS -->
     <!-- Tabler Core -->
     <script src="{{ asset('assets/js/tabler.min.js?1692870487') }}" defer></script>
